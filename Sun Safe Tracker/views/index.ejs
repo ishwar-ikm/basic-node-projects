@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UV Rays</title>
+</head>
+<body>
+    <h2>Get the UV ray index in your location</h2>
+    <!-- Form for submitting latitude and longitude -->
+    <form id="myForm" method="post">
+        <!-- Input field for latitude -->
+        <label for="latInput">Latitude</label>
+        <input type="text" id="latInput" name="lat">
+
+        <!-- Input field for longitude -->
+        <label for="longInput">Longitude</label>
+        <input type="text" id="longInput" name="long">
+
+        <!-- Submit button with formaction set to "/submit" -->
+        <input type="submit" formaction="/submit">
+    </form>
+
+    <!-- Check if UV data is available -->
+    <% if(locals.data) {  %>
+        <!-- Display UV ray index -->
+        <p>UV ray index in your area is <%= data %></p>
+
+        <!-- Check if UV data is a valid number -->
+        <% if(!isNaN(locals.data) || Number.isInteger(locals.data)) {  %>
+            <!-- Determine UV safety recommendations based on index -->
+            <% if(parseFloat(locals.data) < 3) {  %>
+                <p>You can safely enjoy being outside!</p>
+            <% } else if(parseFloat(locals.data) >= 3 && parseFloat(locals.data) < 8) {  %> 
+                <p>Seek shade during midday hours! Slip on a shirt, slop on sunscreen, and slap on a hat!</p>
+            <% } else{ %>
+                <p>Avoid being outside during midday hours! Make sure you seek shade! Wearing a shirt, sunscreen, and a hat is a must!</p>
+            <% } %>
+        <% } %>
+    <% } %>
+</body>
+</html>
