@@ -13,9 +13,6 @@ const config = {
     },
 };
 
-// Serve static files from the "public" directory (e.g., CSS files).
-app.use(express.static("public"));
-
 // Parse incoming request bodies with form data.
 app.use(bodyParser.urlencoded({ extended: true }));
 
