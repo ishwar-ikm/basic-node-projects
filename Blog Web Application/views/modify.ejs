@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Blog</title>
+  <link rel="stylesheet" href="/styles/main.css"> <!-- Link to an external CSS file for styling -->
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      <%= heading %> <!-- Display the heading, which can be 'New Post' or 'Edit Post' -->
+    </h1>
+
+    <!-- Conditional check to determine if 'locals.post' exists (used for editing an existing post) -->
+    <% if (locals.post) { %>
+      <form id="editForm" method="post" action="/api/posts/<%=post.id%>">
+        <input type="text" name="title" value="<%=post.title %>"> <!-- Display the current title of the post -->
+        <textarea id="content" rows="10"><%=post.content %></textarea> <!-- Display the current content of the post -->
+        <input type="text" name="author" value="<%=post.author %>"> <!-- Display the current author of the post -->
+        <button class="full-width" type="submit">
+          <%= submit %> <!-- Display 'Update Post' as the button text -->
+        </button>
+      </form>
+    <% } else { %>
+      <!-- If 'locals.post' does not exist, it's a new post creation form -->
+      <form id="newPostForm" method="post" action="/api/posts">
+        <input type="text" name="title" placeholder="Title" required> <!-- Input field for the title of the new post -->
+        <textarea name="content" placeholder="Content" required rows="10"></textarea> <!-- Text area for the content of the new post -->
+        <input type="text" name="author" placeholder="Author" required> <!-- Input field for the author of the new post -->
+        <button class="full-width" type="submit">
+          <%= submit %> <!-- Display 'Create Post' as the button text for new post creation -->
+        </button>
+      </form>
+    <% } %>
+
+  </div>
+</body>
+
+</html>
