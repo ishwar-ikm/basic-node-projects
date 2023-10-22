@@ -22,7 +22,7 @@ Welcome to my Node.js learning projects repository! This repository contains a c
 ### Project 4: [Blog Web Application]
 - **Description**: This project is a simple blog web application built with Node.js, Express, and EJS templates. It allows you to create, edit, and delete blog posts. Users can view a list of blog posts on the main page, create new blog posts, edit existing posts, and delete blog posts. It also serves static CSS files for styling the application.
 - **Technologies Used**: Node.js, Express.js, EJS, Axios.
-- **Link to Project Repository**: [Blog Web Application](https://github.com/ishwar-ikm/basic-node-projects/tree/main/Blog%20Web%20Application)
+- **Link to Project Repository**: [[Link to the folder]](https://github.com/ishwar-ikm/basic-node-projects/tree/main/Blog%20Web%20Application)
 
 ...
 
