@@ -14,6 +14,16 @@ Welcome to my Node.js learning projects repository! This repository contains a c
 - **Technologies Used**: Node.js, Express.js, ejs, Axios.
 - **Link to Project Folder**: [[Link to the folder]](https://github.com/ishwar-ikm/basic-node-projects/tree/main/Sun%20Safe%20Tracker)
 
+### Project 3: [Joke API Express Server]
+- **Description**: This project is a simple Express.js server that provides a RESTful API for managing jokes. Users can interact with the API to get random jokes, retrieve specific jokes by ID, filter jokes by type, create new jokes, update existing jokes, and delete jokes. It also includes the ability to delete all jokes with authorization using a master key.
+- **Technologies Used**: Node.js, Express.js, body-parser, EJS.
+- **Link to Project Repository**: [[Link to the folder]](https://github.com/ishwar-ikm/basic-node-projects/tree/main/JokeAPI)
+
+### Project 4: [Blog Web Application]
+- **Description**: This project is a simple blog web application built with Node.js, Express, and EJS templates. It allows you to create, edit, and delete blog posts. Users can view a list of blog posts on the main page, create new blog posts, edit existing posts, and delete blog posts. It also serves static CSS files for styling the application.
+- **Technologies Used**: Node.js, Express.js, EJS, Axios.
+- **Link to Project Repository**: [Blog Web Application](https://github.com/ishwar-ikm/basic-node-projects/tree/main/Blog%20Web%20Application)
+
 ...
 
 ## How to Run
