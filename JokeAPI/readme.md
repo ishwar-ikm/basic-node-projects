@@ -32,12 +32,6 @@ This is a simple Express.js server that provides a RESTful API for managing joke
     npm install
     ```
 
-3. **Start the server:**
-
-    ```bash
-    npm start
-    ```
-
 4. **Access the API by making requests to** `http://localhost:3000`.
 
 ## API Endpoints
@@ -58,10 +52,7 @@ This is a simple Express.js server that provides a RESTful API for managing joke
 - To delete a joke, send a `DELETE` request to `/jokes/:id`.
 
 ## Folder Structure
-
-- `public`: Contains static files such as CSS styles.
-- `views`: Contains EJS templates for rendering pages.
-- `app.js`: The main application file.
+- `index.js`: The main application file.
 - `package.json`: Dependencies and scripts.
 
 ## Dependencies
@@ -70,10 +61,3 @@ This is a simple Express.js server that provides a RESTful API for managing joke
 - [body-parser](https://www.npmjs.com/package/body-parser): Middleware for parsing request bodies.
 - [EJS](https://ejs.co/): Embedded JavaScript templating.
 
-## Contributing
-
-If you'd like to contribute to this project, feel free to create a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
