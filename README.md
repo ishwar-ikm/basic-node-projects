@@ -28,7 +28,7 @@ Welcome to my Node.js learning projects repository! This repository contains a c
 - **Description**: The ToDo App is a straightforward task management application developed using Node.js and Express. It follows the MVC (Model-View-Controller) pattern for a well-structured and modular codebase. Users can easily add, edit, and delete tasks, as well as mark them as completed. The application features a responsive design and uses EJS templates for dynamic HTML rendering. Tasks are stored persistently in a JSON file, providing a seamless user experience for managing to-do items.
 - **Technologies Used**: Node.js, Express.js, EJS.
 - **Front-End Code Source**: The front-end code for this project was adapted from [Node.js and Express.js Course by John Smilga](https://github.com/john-smilga/node-express-course/tree/main/03-task-manager/final/public).
-- **Link to Project Repository**: [ToDo App Repository](https://github.com/ishwar-ikm/basic-node-projects/tree/main/ToDo%20app)
+- **Link to Project Repository**: [Link to the folder](https://github.com/ishwar-ikm/basic-node-projects/tree/main/ToDo%20app)
 
 ...
 
