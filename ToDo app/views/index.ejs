@@ -1,0 +1,60 @@
+<%- include('./includes/head.ejs') %>
+
+  <!-- Form for task submission -->
+  <form action="/submit-task" method="post" class="task-form">
+    <h4>TODO Application</h4>
+
+    <!-- Input field for task and submit button -->
+    <div class="form-control">
+      <input type="text" name="task" class="task-input" placeholder="e.g. wash dishes" />
+      <button type="submit" class="btn submit-btn">submit</button>
+    </div>
+
+    <!-- Container for form alerts -->
+    <div class="form-alert">
+      
+    </div>
+  </form>
+
+  <!-- Display tasks if there are any -->
+  <% if(tasks.length > 0) { %>
+  <section class="tasks-container">
+    <p class="loading-text">Loading...</p>
+    
+    <!-- Container for displaying tasks -->
+    <div class="tasks">
+
+      <!-- Loop through tasks and display each -->
+      <% for(let task of tasks) { %>
+      <div class="single-task <%= task.state === true ? 'task-completed' : '' %>">
+        <!-- Display task name -->
+        <h5><%= task.task %></h5>
+
+        <!-- Task completion status -->
+        <% console.log(task.state) %>
+
+        <!-- Task action links -->
+        <div class="task-links">
+          <!-- Edit task form -->
+          <form action="/edit/<%= task.id %>" method="get" class="exclude-styles">
+            <button type="submit" class="edit-link"><ion-icon name="create-outline"></ion-icon></button>
+          </form>
+
+          <!-- Delete task form -->
+          <form action="/delete" method="post" class="exclude-styles">
+            <button type="submit" class="delete-btn"><ion-icon name="trash-outline"></ion-icon></button>
+            <input type="hidden" name="id" value="<%= task.id %>">
+          </form>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+  </section>
+  <% } %>
+
+  <!-- Script tags for Ionicons library -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<%- include('./includes/end.ejs') %>

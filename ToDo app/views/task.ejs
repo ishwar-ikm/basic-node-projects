@@ -1,0 +1,42 @@
+<%- include('./includes/head.ejs') %>
+
+<!-- Container for the edit task form -->
+<div class="container">
+  
+  <!-- Form for editing a single task -->
+  <form class="single-task-form" action="/edit" method="post">
+    <h4>Edit Task</h4>
+
+    <!-- Displaying the Task ID -->
+    <div class="form-control">
+      <label>Task ID</label>
+      <p class="task-edit-id"><%= id %></p>
+    </div>
+
+    <!-- Input field for editing the task name -->
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input type="text" name="task" class="task-edit-name" />
+    </div>
+
+    <!-- Checkbox for marking the task as completed -->
+    <div class="form-control">
+      <label for="completed">Completed</label>
+      <input type="checkbox" name="completed" class="task-edit-completed" />
+    </div>
+
+    <!-- Submit button for editing the task -->
+    <button type="submit" class="block btn task-edit-btn">edit</button>
+
+    <!-- Hidden input field for the task ID -->
+    <input type="hidden" name="id" value="<%= id %>">
+
+    <!-- Container for form alerts -->
+    <div class="form-alert"></div>
+  </form>
+
+  <!-- Link to go back to the tasks page -->
+  <a href="index.html" class="btn back-link">back to tasks</a>
+</div>
+
+<%- include('./includes/end.ejs') %>
