@@ -15,14 +15,7 @@ This is a simple blog web application built with Node.js, Express, and EJS templ
 
 ## Getting Started
 
-1. **Clone the repository to your local machine:**
-
-    ```bash
-    git clone https://github.com/yourusername/blog-web-app.git
-    cd blog-web-app
-    ```
-
-2. **Install dependencies:**
+1. **Install dependencies:**
 
     ```bash
     npm install
