@@ -12,11 +12,7 @@ These instructions will help you set up and run the project on your local machin
 
 ### Installation
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-username/qr-code-project.git
-   cd qr-code-project
-2. Install project dependencies using npm: npm install
+1. Install project dependencies using npm: npm install
 
 
 ### Usage
