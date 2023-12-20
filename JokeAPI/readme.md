@@ -19,14 +19,7 @@ This is a simple Express.js server that provides a RESTful API for managing joke
 
 ## Getting Started
 
-1. **Clone the repository to your local machine:**
-
-    ```bash
-    git clone https://github.com/your-username/joke-api-server.git
-    cd joke-api-server
-    ```
-
-2. **Install dependencies:**
+1. **Install dependencies:**
 
     ```bash
     npm install
