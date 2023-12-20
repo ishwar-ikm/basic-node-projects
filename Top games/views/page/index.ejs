@@ -1,0 +1,78 @@
+<%- include('../includes/head.ejs') %>
+<!-- Include head.ejs for common HTML head elements -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<!-- Link to the Bootstrap CSS library for styling -->
+
+<link rel="stylesheet" href="/css/games.css">
+<!-- Link to an external CSS file for additional styling -->
+
+</head>
+
+<body>
+
+    <section class="heading" id="features">
+
+        <div class="head-parent">
+            <div>
+                <div>
+                    <h1>Ishwar Mishra's Top Games</h1>
+                    <!-- Heading for the top games page -->
+
+                </div>
+                <div class="heading pt-10">
+                    <h4>
+                        Welcome to my top games page, your ultimate destination for gaming enthusiasts! Immerse
+                        yourself
+                        in a world of thrilling adventures, intense battles, and captivating stories as I bring you
+                        a
+                        carefully curated collection of my top-rated games.<br>
+
+                        Sorted with my top recommendations up top. Page gets updated as I play through more games.
+                    </h4>
+                    <!-- Introduction to the top games page -->
+                </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+
+    <% if(games.length >= 0) {%>
+        <!-- Check if there are games to display -->
+        <% for(let game of games) {%>
+            <!-- Loop through each game in the games array -->
+            <section class="games">
+                <img src="<%= game.imageUrl %>" alt="">
+                <!-- Display the game image -->
+                <a href="/page/<%= game._id %>"><%= game.title %></a>
+                <!-- Display the game title with a link to its page -->
+                <p>How strongly I recommend it: <%= game.recommendation %>/10</p>
+                <!-- Display the game recommendation -->
+                <h5><%= game.description %></h5>
+                <!-- Display the game description -->
+                <% if(editMode) {%>
+                    <!-- Check if editMode is true (if in edit mode) -->
+                    <div style="text-align: center;">
+                        <form style="display: inline-block; margin: 10px" action="/edit-page/<%= game._id %>" method="get">
+                            <button class="btn" type="submit">Edit</button>
+                        </form>
+                        <!-- Form for editing a game -->
+                        <form style="display: inline-block; margin: 10px" action="/delete" method="post">
+                            <button class="btn" type="submit">Delete</button>
+                            <input type="hidden" value="<%= game._id %>" name="id">
+                        </form>
+                        <!-- Form for deleting a game -->
+                    </div>
+                <% } %>
+            </section>
+        <% } %>
+    <% } %>
+
+    <form style="margin-left: 50%;" action="/addGame" method="get">
+        <button class="btn" type="submit">Add Game</button>
+    </form>
+    <!-- Form for adding a new game -->
+
+    <%- include('../includes/end.ejs') %>
+    <!-- Include end.ejs for common HTML closing elements -->

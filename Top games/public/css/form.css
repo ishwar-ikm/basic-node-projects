@@ -1,0 +1,51 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #120e0e;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-container {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.product-form {
+    width: 100%;
+}
+
+.form-control {
+    margin: 1rem 0;
+}
+
+.form-control label {
+    display: block;
+    text-align: left;
+    color: #b63e3e; /* Red color for labels */
+}
+
+.form-control input,
+.form-control textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #a1a1a1;
+    font: inherit;
+    border-radius: 2px;
+    background-color: #ffffff;
+    color: #dd4444; /* Dark text color for input fields */
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    outline-color: #00695c;
+    color: #e06969; /* Dark text color when focused */
+}

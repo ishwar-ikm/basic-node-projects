@@ -1,0 +1,12 @@
+button.btn {
+    background-color: #28a745 !important; /* Change this color to your preferred button color */
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #218838 !important; /* Change this color for the hover effect */
+}

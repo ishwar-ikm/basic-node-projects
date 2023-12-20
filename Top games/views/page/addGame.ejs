@@ -1,0 +1,59 @@
+<%- include('../includes/head.ejs') %>
+    <!-- Include head.ejs for common HTML head elements -->
+
+    <link rel="stylesheet" href="/css/form.css">
+    <!-- Link to an external CSS file for styling the form -->
+
+</head>
+
+<body>
+
+    <div class="form-container">
+        <form class="product-form" method="POST" action="/<% if(editMode) {%>editGame<% } else {%>addGame<% } %>">
+            <!-- Determine the form action dynamically based on editMode -->
+
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="<% if(editMode) {%><%=game.title%><% } %>">
+                <!-- Display the game title if editMode is true -->
+            </div>
+
+            <div class="form-control">
+                <label for="imageUrl">Image URL</label>
+                <input type="text" name="imageUrl" id="imageUrl" value="<% if(editMode) {%><%=game.imageUrl%><% } %>">
+                <!-- Display the game image URL if editMode is true -->
+            </div>
+
+            <div class="form-control">
+                <label for="price">Rating</label>
+                <input type="number" name="recommendation" id="price" step="0.01" value="<% if(editMode) {%><%=game.recommendation%><% } %>">
+                <!-- Display the game recommendation if editMode is true -->
+            </div>
+
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" rows="5"><% if(editMode) {%><%=game.description%><% } %></textarea>
+                <!-- Display the game description if editMode is true -->
+            </div>
+
+            <div class="form-control">
+                <label for="description">Detailed Description</label>
+                <textarea name="detail_description" id="description" rows="7"><% if(editMode) {%><%=game.detail_description%><% } %></textarea>
+                <!-- Display the detailed game description if editMode is true -->
+            </div>
+
+            <% if (editMode) { %>
+                <input type="hidden" value="<%= game._id %>" name="id">
+                <!-- Include a hidden input for the game ID if editMode is true -->
+            <% } %>
+
+            <button class="btn" type="submit"><% if(editMode) {%>Edit<% } else {%>Submit<% } %></button>
+            <!-- Change the button label based on editMode -->
+
+        </form>
+    </div>
+
+</body>
+
+<%- include('../includes/end.ejs') %>
+<!-- Include end.ejs for common HTML closing elements -->

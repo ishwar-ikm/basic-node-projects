@@ -1,0 +1,26 @@
+<%- include('../includes/head.ejs') %>
+<!-- Include head.ejs for common HTML head elements -->
+
+<link rel="stylesheet" href="/css/page.css">
+<!-- Link to an external CSS file for additional styling -->
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Container for the page content -->
+        <h1><%= pageTitle %></h1>
+        <!-- Display the page title dynamically -->
+        <div class="detail-description">
+            <%= game.detail_description %>
+            <!-- Display the detailed description of the game -->
+        </div>
+        <form action="/" method="get">
+            <!-- Form to navigate back to the home page -->
+            <button class="btn" type="submit">Go Back</button>
+            <!-- Button to submit the form and go back to the home page -->
+        </form>
+    </div>
+
+<%- include('../includes/end.ejs') %>
+<!-- Include end.ejs for common HTML closing elements -->
