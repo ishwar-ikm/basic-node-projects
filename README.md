@@ -30,6 +30,10 @@ Welcome to my Node.js learning projects repository! This repository contains a c
 - **Front-End Code Source**: The front-end code for this project was adapted from [Node.js and Express.js Course by John Smilga](https://github.com/john-smilga/node-express-course/tree/main/03-task-manager/final/public).
 - **Link to Project Repository**: [[Link to the folder]](https://github.com/ishwar-ikm/basic-node-projects/tree/main/ToDo%20app)
 
+### Project 6: [Top Games Website]
+- **Description**: The Top Games Collection is a web application built using Node.js and Express.js. It provides a platform for users to manage and explore their favorite games. The application implements CRUD (Create, Read, Update, Delete) operations, allowing users to add new games, edit existing ones, and delete entries. It follows the MVC (Model-View-Controller) pattern, ensuring a well-organized and modular codebase. The user interface is designed to be intuitive, and Bootstrap is utilized for responsive and visually appealing styling. MongoDB serves as the backend database to persistently store game data.
+- **Technologies Used**: Node.js, Express.js, MongoDB, Mongoose, EJS, Bootstrap.
+- **Link to Project Repository**: [[Link to the folder]](https://github.com/ishwar-ikm/basic-node-projects/tree/main/Top%20games)
 ...
 
 ## How to Run
