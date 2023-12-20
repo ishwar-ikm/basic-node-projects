@@ -14,8 +14,4 @@ The UV Ray Index Checker is a web application that allows users to quickly retri
 
 ## Getting Started
 
-1. Clone this repository to your local machine:
-
-   ```shell
-   git clone https://github.com/yourusername/uv-ray-index-checker.git
-2. Install project dependencies using npm: npm install
+1. Install project dependencies using npm: npm install
