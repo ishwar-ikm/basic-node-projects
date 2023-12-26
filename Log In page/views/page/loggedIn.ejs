@@ -1,0 +1,17 @@
+<%- include('../includes/head.ejs') %>
+
+<!-- Header Section -->
+<h1>Logged In</h1>
+
+<!-- Logout Form -->
+<form action="/logout" method="post">
+    <!-- Logout Button -->
+    <div class="but">
+        <button class="btn">Log Out</button>
+    </div>
+
+    <!-- CSRF token for security -->
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+</form>
+
+<%- include('../includes/end.ejs') %>

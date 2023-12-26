@@ -1,0 +1,54 @@
+<%- include('../includes/head.ejs') %>
+
+<!-- Header Section -->
+<section>
+    <!-- Form Box Container -->
+    <div class="form-box">
+        <!-- Display the page title -->
+        <h1><%=pageTitle%></h1>
+        <div class="form-content">
+            <!-- Login Form -->
+            <form action="/login" method="post">
+                <!-- Display error message if it exists -->
+                <% if(errorMessage) {%>
+                    <div style="padding-top: 40px;">
+                        <h5><%=errorMessage %></h5>
+                    </div>
+                <% } %>
+
+                <!-- Input field for Email-ID -->
+                <div class="input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <label for="text" class="text">Email-ID</label>
+                    <!-- Pre-fill email input with old input value if it exists -->
+                    <input name="email" type="text" id="text" required value="<%=oldInput.email%>">
+                </div>
+
+                <!-- Input field for Password -->
+                <div class="input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <label for="" class="text">Password</label>
+                    <!-- Pre-fill password input with old input value if it exists -->
+                    <input name="password" type="password" required value="<%=oldInput.password%>">
+                </div>
+
+                <!-- Links for password recovery and registration -->
+                <div class="que">
+                    <a href="/forgotPassword" class="forgot">Forgot Password</a>
+                    <label for="">Don't have an account? </label>
+                    <a href="/register">Register</a>
+                </div>
+
+                <!-- Login Button -->
+                <div class="but">
+                    <button class="btn">Log In</button>
+                </div>
+
+                <!-- CSRF token for security -->
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            </form>
+        </div>
+    </div>
+</section>
+
+<%- include('../includes/end.ejs') %>
