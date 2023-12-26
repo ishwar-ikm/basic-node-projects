@@ -34,6 +34,20 @@ Welcome to my Node.js learning projects repository! This repository contains a c
 - **Description**: The Top Games Collection is a web application built using Node.js and Express.js. It provides a platform for users to manage and explore their favorite games. The application implements CRUD (Create, Read, Update, Delete) operations, allowing users to add new games, edit existing ones, and delete entries. It follows the MVC (Model-View-Controller) pattern, ensuring a well-organized and modular codebase. The user interface is designed to be intuitive, and Bootstrap is utilized for responsive and visually appealing styling. MongoDB serves as the backend database to persistently store game data.
 - **Technologies Used**: Node.js, Express.js, MongoDB, Mongoose, EJS, Bootstrap.
 - **Link to Project Repository**: [[Link to the folder]](https://github.com/ishwar-ikm/basic-node-projects/tree/main/Top%20games)
+
+### Project 7: [Log In page]
+- **Description**: This log in web application built using Node.js, Express.js, and MongoDB. It focuses on providing a secure and user-friendly authentication system with features like user registration, login, logout, password reset, and authorization. The project follows the MVC (Model-View-Controller) architecture to ensure a well-organized and modular codebase.
+
+    - **Features:**
+      - **User Registration:** Allows users to sign up by providing their email and password. Passwords are securely hashed before storage.
+      - **User Login:** Provides a secure login mechanism with email and password verification.
+      - **Password Reset:** Enables users to request a password reset via email and securely reset their password.
+      - **Authorization Middleware:** Custom middleware ensures that certain routes are accessible only to logged-in users.
+      - **Flash Messages:** Utilizes connect-flash to display informative messages to users.
+
+- **Technologies Used**: Node.js, Express.js, MongoDB, Mongoose, EJS, Bcrypt, Nodemailer, Connect-Flash, CSRF protection.
+- **Link to Project Repository**: [[Link to the folder]](https://github.com/ishwar-ikm/basic-node-projects/tree/main/Log%20In%20page)
+
 ...
 
 ## How to Run
