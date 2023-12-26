@@ -33,26 +33,29 @@ This project is a web application built with Node.js, Express, MongoDB, and EJS.
 
 ## Setup
 
-1. Clone the repository: `git clone https://github.com/your-username/your-project.git`
+1. Clone the repository
 2. Install dependencies: `npm install`
 3. Configure MongoDB: Update the MongoDB connection URI in the `app.js` file.
-4. Run the application: `npm start`
-5. Open the application in your browser: `http://localhost:3000`
+4. Configure Nodemailer: Update email and app password for sending emails in controller/login.js in transporter function on line 8
+5. Run the application: `npm start`
+6. Open the application in your browser: `http://localhost:3000`
 
 ## Dependencies
 
-- **Express:** Web framework for Node.js.
-- **MongoDB:** NoSQL database for storing user data.
-- **EJS:** Templating engine for rendering dynamic HTML pages.
-- **Bcrypt:** Hashing library for secure password storage.
-- **Nodemailer:** Sending emails for password reset functionality.
-- **CSRF:** Protection against Cross-Site Request Forgery attacks.
-- **Connect-Mongo:** Store session data in MongoDB.
+- **bcrypt:** Hashing library for secure password storage.
+- **body-parser:** Parse incoming request bodies in middleware.
+- **connect-flash:** Store and retrieve messages in the session for displaying flash messages.
+- **connect-mongodb-session:** Store session data in MongoDB.
+- **csurf:** Protection against Cross-Site Request Forgery attacks.
+- **ejs:** Templating engine for rendering dynamic HTML pages.
+- **express:** Web framework for Node.js.
+- **express-session:** Session middleware for Express.
+- **express-validator:** Validator middleware for Express.
+- **mongodb:** Official MongoDB driver for Node.js.
+- **mongoose:** MongoDB object modeling for Node.js.
+- **nodemailer:** Sending emails for password reset functionality.
 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
