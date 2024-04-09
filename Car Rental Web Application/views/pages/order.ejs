@@ -1,0 +1,50 @@
+<%- include('../includes/head') %>
+    <%- include('../includes/navbar') %>
+
+    <div class="container">
+        <div class="row justify-content-center">
+    
+            <% if(orders.length > 0) {%>
+    
+            <% for (let order of orders) {%>
+    
+                <div class="col-lg-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <img src="<%=order.carId.imageUrl%>" class="card-img-top mt-3" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title"><%=order.carId.name%></h4>
+                            <p class="card-title fw-bold mb-3">
+                                For <%=order.amount%> 
+                                <% let val = order.mode%>
+                                <% if(order.mode === 'ppd') {%> 
+                                    day
+                                <%} else if(order.mode == 'ppkm') {%>
+                                    KM
+                                <%} else {%>
+                                    Hour
+                                <%}%>
+        
+                                at ₹ <%=order.amount * order.carId[val]%>
+                            </p>
+                            
+                            <form action="/cancel" method="POST">
+                                <input type="hidden" value="<%=order.carId._id%>" name="carId">
+                                <button class="btn btn-danger">Cancel</button>
+                            </form>
+        
+                        </div>
+                    </div>
+                </div>
+    
+            <% } %>
+            
+            <%} else {%>
+                <div class="mt-4">
+                    <h3>No Orders Found</h3>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    
+
+    <%- include('../includes/end') %>

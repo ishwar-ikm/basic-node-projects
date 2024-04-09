@@ -1,0 +1,64 @@
+<%- include('../includes/head') %>
+    <%- include('../includes/navbar') %>
+
+    <style>
+        p{
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    </style>
+    <div class="container form-control mt-4">
+        <h3 class="p-2 text-center">Hello <%=user.firstName%></h3>
+    </div>
+
+    <form id="rentForm" action="/rent" method="POST">
+        <div class="container form-control mt-4 text-center" style="width: 65%;">
+            <h4 class="p-2"><%=car.name%></h4>
+            <img src="<%=car.imageUrl%>" alt="">
+            <h4 class="card-title text-<%if(car.stock > 0){%>success<%}else{%>danger<%}%> mb-3 mt-5">Stock: <%= car.stock %></h4>
+    
+            <div class="btn-group mb-4" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="ppd" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1">Per Day</label>
+              
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="ppkm" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2">Per KM</label>
+              
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" value="pph" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio3">Per Hour</label>
+            </div>
+    
+            <div class="row mb-3">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2">
+                    <div class="row">
+                        <div class="col-lg-4"><p>Rent:</p></div>
+                        <div class="col-lg-4"><p id="rentAmount"></p></div>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-3"><input class="form-control" type="number" id="rentFor" name="amount" placeholder="Rent For"></div>
+                <div class="col-lg-1"><p id="totalRent">₹ 0</p></div>
+            </div>
+
+            <% if(error.length > 0) {%>
+            <div class="alert alert-danger" role="alert">
+                Car is out of stock
+            </div>
+            <%}%>
+    
+            <a href="/" class="btn btn-warning">Cancel</a>
+            <button type="submit" class="btn btn-<%if(car.stock > 0){%>success<%}else{%>danger<%}%>">Rent</button>
+            <input type="hidden" value="<%=car._id%>" name="id">
+        </div>
+    </form>
+    
+    <script>
+        const car = <%- JSON.stringify(car) %>;
+    </script>
+    <script src="/javascript/rent-update.js"></script>
+    
+    
+    
+
+    <%- include('../includes/end') %>

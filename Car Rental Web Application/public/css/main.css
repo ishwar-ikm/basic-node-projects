@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(245, 245, 245) !important;
+}
+
+nav-link:hover{
+    color: rgb(149, 169, 76) !important;
+}
+
+.card{
+    margin-top: 10%;
+}
+
+.main-form{
+    margin-top: 30px;
+    width: 60% !important;
+}
+
+.btn:hover{
+    color: black !important;
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    display:inline; /* ie7 fix */
+    zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+.well{
+    display: flex;
+    justify-content: center;
+}
+
+.active{
+    color: rgb(149, 169, 76) !important;
+}

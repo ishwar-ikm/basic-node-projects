@@ -1,0 +1,25 @@
+<%- include('../includes/head') %>
+    <%- include('../includes/navbar') %>
+
+    
+        <div class="container form-control main-form bg-light">
+            <% if(errorMessage) {%>
+                <div class="alert alert-danger" role="alert">
+                    <h5><%=errorMessage %></h5>
+                  </div>
+            <% } %>
+            <form action="/login" method="POST">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address or Username</label>
+                  <input name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= oldInput.email %>">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input name="password" type="password" class="form-control" id="exampleInputPassword1" value="<%= oldInput.password %>">
+                </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+              </form>
+        </div>
+
+
+        <%- include('../includes/end') %>

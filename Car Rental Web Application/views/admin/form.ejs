@@ -1,0 +1,49 @@
+<%- include('../includes/head') %>
+    <%- include('../includes/navbar') %>
+
+        <div class="container form-control main-form bg-light">
+            <form action="/admin<%if(edit){%>/edit-rentals<%} else {%>/add-rentals<%}%>" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Car Name</label>
+                    <input name="name" type="Text" class="form-control col-md-6" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%if(edit){%><%=car.name%><%}%>">
+                </div>
+
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="exampleInputPassword1" class="form-label">Price Per Day</label>
+                            <input name="ppd" type="number" step="0.01" class="form-control col-md-6" id="exampleInputPassword1" value="<%if(edit){%><%=car.ppd%><%}%>">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="exampleInputPassword1" class="form-label">Price Per Hour</label>
+                            <input name="pph" type="number" step="0.01" class="form-control col-md-6" id="exampleInputPassword1" value="<%if(edit){%><%=car.pph%><%}%>">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="exampleInputPassword1" class="form-label">Price Per KM</label>
+                            <input name="ppkm" type="number" step="0.01" class="form-control col-md-6" id="exampleInputPassword1" value="<%if(edit){%><%=car.ppkm%><%}%>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Image URL</label>
+                    <input name="imageUrl" type="text" class="form-control col-md-6" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%if(edit){%><%=car.imageUrl%><%}%>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Stock</label>
+                    <input name="stock" type="number" class="form-control col-md-6" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%if(edit){%><%=car.stock%><%}%>">
+                </div>
+
+                <label for="exampleInputEmail1" class="form-label">Description</label>
+                <textarea name="desc" class="form-control col-md-6" cols="30" rows="10"><%if(edit){%><%=car.description%><%}%></textarea>
+
+                <button type="submit" class="btn btn-primary mt-3"><%if(edit){%>Edit<%} else {%>Submit<%}%></button>
+                <%if(edit){%>
+                    <input type="hidden" value="<%=car._id %>" name="id">
+                <%}%>
+            </form>
+        </div>
+
+
+        <%- include('../includes/end') %>

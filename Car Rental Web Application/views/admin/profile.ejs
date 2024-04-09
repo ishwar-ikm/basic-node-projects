@@ -1,0 +1,36 @@
+<%- include('../includes/head') %>
+    <%- include('../includes/navbar') %>
+
+    <div class="container mt-3 form-control" style="width: 50%;">
+        <div class="text-center">
+            <h2><%=user.firstName%> <%=user.lastName%></h2>
+        </div>
+        <div class="info mt-5">
+            <h4 class="mb-4">Profile Information</h4>
+
+            <table>
+                <tr>
+                    <td style="padding: 5px; padding-right: 100px;"><b>Username:</b></td>
+                    <td><%=user.username%></td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px; padding-right: 100px;"><b>First Name:</b></td>
+                    <td><%=user.firstName%></td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px; padding-right: 100px;"><b>Last Name:</b></td>
+                    <td><%=user.lastName%></td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px; padding-right: 100px;"><b>Email:</b></td>
+                    <td><%=user.email%></td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px; padding-right: 100px;"><b>Gender:</b></td>
+                    <td><%=user.gender%></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <%- include('../includes/end') %>

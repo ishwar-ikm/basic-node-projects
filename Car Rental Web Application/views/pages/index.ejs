@@ -1,0 +1,59 @@
+<%- include('../includes/head') %>
+    <%- include('../includes/navbar') %>
+
+
+       <div class="container">
+        <section class="rental-items">
+
+            <div class="row justify-content-center">
+
+                <% if(cars.length > 0) {%>
+
+                <% for (let car of cars) {%>
+                <div class="col-lg-4">
+
+                    <div class="card text-center" style="width: 18rem;">
+                        <img src="<%=car.imageUrl%>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%=car.name%></h5>
+                            <h5 class="card-title text-<%if(car.stock > 0){%>success<%}else{%>danger<%}%> fw-bold mb-3">Stock: <%= car.stock %></h5>
+
+                            <%if(!edit){%>
+                                <% if(isAuthenticated) {%>
+                                    <a href="/details/<%=car._id%>" class="btn btn-info">Details</a>
+                                    <a href="/rent/<%=car._id%>"
+                                        class="btn btn-<%if(car.stock > 0){%>success<%}else{%>danger<%}%>">Rent</a>
+    
+                                    <% } else {%>
+                                        <a href="/details/<%=car._id%>" class="btn btn-info">Details</a>
+                                        <% }%>
+                            <%} else {%>
+                                <div class="btn-group" role="group">
+                                    <a href="/admin/edit/<%=car._id%>" class="btn btn-info me-2">Edit</a>
+                                    <form action="/admin/delete/<%=car._id%>" method="POST">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                                                               
+                            <%}%>
+                        </div>
+                    </div>
+
+                </div>
+                <% } %>
+                
+                <%} else {%>
+                    <div class="mt-4">
+                        <%if(!edit){%>
+                            <h3>No Rentals Found</h3>
+                        <% } else {%>
+                            <h3>You have not added any cars</h3>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+            
+        </section>
+       </div>
+
+        <%- include('../includes/end') %>

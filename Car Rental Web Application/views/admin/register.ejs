@@ -1,0 +1,72 @@
+<%- include('../includes/head') %>
+  <%- include('../includes/navbar') %>
+
+
+    <div class="container form-control main-form bg-light">
+      <% if(errorMessage) {%>
+        <div class="alert alert-danger" role="alert">
+          <h5>
+            <%=errorMessage %>
+          </h5>
+        </div>
+        <% } %>
+          <form action="/signup" method="POST">
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <div class="row">
+
+                <div class="col-lg-6">
+                  <input name="firstName" type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" value="<%= oldInput.firstName %>" placeholder="First Name">
+                </div>
+                <div class="col-lg-6">
+                  <input name="lastName" type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" value="<%= oldInput.lastName %>" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input name="username" type="text" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" value="<%= oldInput.username %>">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                value="<%= oldInput.email %>">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input name="password" type="password" class="form-control" id="exampleInputPassword1"
+                value="<%= oldInput.password %>">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+              <input name="confirmPassword" type="password" class="form-control" id="exampleInputPassword1"
+                value="<%= oldInput.confirmPassword %>">
+            </div>
+
+            <div class="mb-3">
+              <label class="mb-1" for="cars">Gender</label>
+              <div class="dropdown">
+                <select class="btn btn-secondary dropdown-toggle"  name="gender" id="cars">
+                  <option class="dropdown-item" value="Male">Male</option>
+                  <option class="dropdown-item" value="Female">Female</option>
+                  <option class="dropdown-item" value="Others">Others</option>
+                </select>
+              </div>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+    </div>
+
+
+    <%- include('../includes/end') %>

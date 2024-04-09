@@ -1,0 +1,46 @@
+<%- include('../includes/head') %>
+    <%- include('../includes/navbar') %>
+
+        <div class="form-control container text-center mt-3">
+            <h1 class="text-primary">
+                <%=car.name%>
+            </h1>
+            <img src="<%=car.imageUrl%>" alt="">
+            <h4 class="mt-3 mb-4 text-secondary">
+                <%=car.description%>
+            </h4>
+
+            <div class="well mb-3" style="background-color: #effeff;">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" href="#rate_by_hour" data-toggle="tab"
+                            aria-expanded="true">Per Hour</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rate_by_day" data-toggle="tab"
+                            aria-expanded="false">Per Day</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rate_by_km" data-toggle="tab"
+                            aria-expanded="false">Per KM</a></li>
+                </ul>
+            </div>
+
+            <div id="tab-content" class="tab-content">
+                <div class="tab-pane fade show active" id="rate_by_hour">
+                    <h5>₹ <%=car.pph%>
+                    </h5>
+                </div>
+                <div class="tab-pane fade" id="rate_by_day">
+                    <h5>₹ <%=car.ppd%>
+                    </h5>
+                </div>
+                <div class="tab-pane fade" id="rate_by_km">
+                    <h5>₹ <%=car.ppkm%>
+                    </h5>
+                </div>
+            </div>
+
+
+            <h4 class="card-title text-<%if(car.stock > 0){%>success<%}else{%>danger<%}%> mb-3 mt-5">Stock: <%= car.stock %></h4>
+            <% if(isAuthenticated) {%>
+            <a href="/rent/<%=car._id%>" class="btn btn-<%if(car.stock > 0){%>success<%}else{%>danger<%}%> mb-3">Rent</a>
+            <%}%>
+        </div>
+
+        <%- include('../includes/end') %>
