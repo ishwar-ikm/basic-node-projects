@@ -105,9 +105,3 @@ This is a web application for car rental services. Users can browse available ca
 ### User Profile Page
 
 ![User Profile Page](screenshots/profile.png)
-
-
-<br>
-<br>
-
-Feel free to adjust the sections and content according to your project's specific details and requirements.
