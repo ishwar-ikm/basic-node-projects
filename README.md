@@ -62,7 +62,7 @@ Welcome to my Node.js learning projects repository! This repository contains a c
 
 - **Technologies Used**: Node.js, Express.js, MongoDB, Mongoose, EJS, Bcrypt.js, express-session, connect-mongodb-session, Middleware.
 
-- **Link to Project Repository**: [Car Rental Web Application]()
+- **Link to Project Repository**: [Car Rental Web Application](https://github.com/ishwar-ikm/basic-node-projects/tree/main/Car%20Rental%20Web%20Application)
 
 ...
 
